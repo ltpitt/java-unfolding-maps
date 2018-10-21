@@ -51,7 +51,8 @@ public class MyPApplet extends PApplet{
 	
 	public static void main (String[] args) {
 		//Add main method for running as application
-		PApplet.main(new String[] {"--present", "MyPApplet"});
+		PApplet.main(new String(demos.MyPApplet.class.getName()));
+
 	}
 }
 
