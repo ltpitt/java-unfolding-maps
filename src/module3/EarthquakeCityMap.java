@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Processing library
+import de.fhpotsdam.unfolding.providers.Microsoft;
 import processing.core.PApplet;
 
 //Unfolding libraries
@@ -24,8 +25,8 @@ import parsing.ParseFeed;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
- * Date: July 17, 2015
+ * @author Davide Nastri
+ * Date: October 22, 2018
  * */
 public class EarthquakeCityMap extends PApplet {
 
@@ -58,7 +59,8 @@ public class EarthquakeCityMap extends PApplet {
 		    earthquakesURL = "2.5_week.atom"; 	// Same feed, saved Aug 7, 2015, for working offline
 		}
 		else {
-			map = new UnfoldingMap(this, 200, 50, 700, 500, new Google.GoogleMapProvider());
+			//map = new UnfoldingMap(this, 200, 50, 700, 500, new Google.GoogleMapProvider());
+			map = new UnfoldingMap(this, new Microsoft.HybridProvider());
 			// IF YOU WANT TO TEST WITH A LOCAL FILE, uncomment the next line
 			//earthquakesURL = "2.5_week.atom";
 		}
@@ -136,4 +138,12 @@ public class EarthquakeCityMap extends PApplet {
 		// Remember you can use Processing's graphics methods here
 	
 	}
+
+	public static void main (String[] args) {
+		//Add main method for running as application
+		PApplet.main(new String(module3.EarthquakeCityMap.class.getName()));
+
+	}
+
+
 }
