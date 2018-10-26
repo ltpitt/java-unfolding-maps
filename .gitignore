@@ -1,6 +1,8 @@
 # Intellij
 .idea/
-.DS_Store/
-.out/
+.DS_Store
+.out
+.classpath
+.project
 *.iml
 *.iws
