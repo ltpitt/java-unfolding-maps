@@ -41,8 +41,8 @@ public class EarthquakeCityMap extends PApplet {
 	// Less than this threshold is a minor earthquake
 	public static final float THRESHOLD_LIGHT = 4;
 	public static final float SIZE_SEVERE_EARTHQUAKE = 15;
-	public static final float SIZE_MODERATE_EARTHQUAKE = 15;
-	public static final float SIZE_LIGHT_EARTHQUAKE = 15;
+	public static final float SIZE_MODERATE_EARTHQUAKE = 10;
+	public static final float SIZE_LIGHT_EARTHQUAKE = 5;
 
 
 	/** This is where to find the local tiles, for working without an Internet connection */
@@ -64,7 +64,7 @@ public class EarthquakeCityMap extends PApplet {
 		}
 		else {
 			//map = new UnfoldingMap(this, 200, 50, 700, 500, new Google.GoogleMapProvider());
-			map = new UnfoldingMap(this, new Microsoft.HybridProvider());
+			map = new UnfoldingMap(this, 200, 10, 700, 500, new Microsoft.HybridProvider());
 			// IF YOU WANT TO TEST WITH A LOCAL FILE, uncomment the next line
 			//earthquakesURL = "2.5_week.atom";
 		}
@@ -150,10 +150,30 @@ public class EarthquakeCityMap extends PApplet {
 
 	// helper method to draw key in GUI
 	// TODO: Implement this method to draw the key
-	private void addKey() 
-	{	
+	private void addKey() {
 		// Remember you can use Processing's graphics methods here
-	
+		fill(255, 250, 240);
+		rect(10, 10, 175, 290, 7);
+
+		fill(0);
+		textAlign(LEFT, CENTER);
+		textSize(12);
+		text("Earthquake Key", 50, 75);
+
+		fill(color(255, 0, 0));
+		ellipse(50, 125, 15, SIZE_SEVERE_EARTHQUAKE);
+		fill(color(255, 255, 0));
+		ellipse(50, 175, 10, SIZE_MODERATE_EARTHQUAKE);
+		fill(color(0, 0, 255));
+		ellipse(50, 225, 5, SIZE_LIGHT_EARTHQUAKE);
+
+		fill(0, 0, 0);
+		text("5.0+ Magnitude", 75, 125);
+		text("4.0+ Magnitude", 75, 175);
+		text("Below 4.0", 75, 225);
+
+
+
 	}
 
 	public static void main (String[] args) {
