@@ -55,11 +55,6 @@ public class EarthquakeCityMap extends PApplet {
     //feed with magnitude 2.5+ Earthquakes
     private String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
 
-    public static void main(String[] args) {
-        //Add main method for running as application
-        PApplet.main(new String(module3.EarthquakeCityMap.class.getName()));
-    }
-
     public void setup() {
         size(950, 600, OPENGL);
 
@@ -152,6 +147,11 @@ public class EarthquakeCityMap extends PApplet {
         text("5.0+ Magnitude", 75, 125);
         text("4.0+ Magnitude", 75, 175);
         text("Below 4.0", 75, 225);
+    }
+
+    public static void main(String[] args) {
+        //Add main method for running as application
+        PApplet.main(new String(module3.EarthquakeCityMap.class.getName()));
     }
 
 }
