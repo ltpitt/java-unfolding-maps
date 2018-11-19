@@ -1,6 +1,7 @@
 package module4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
@@ -21,8 +22,8 @@ import processing.core.PApplet;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
- * Date: July 17, 2015
+ * @author Davide Nastri
+ * Date: 11/4/2018
  * */
 public class EarthquakeCityMap extends PApplet {
 	
@@ -81,7 +82,7 @@ public class EarthquakeCityMap extends PApplet {
 		// FOR TESTING: Set earthquakesURL to be one of the testing files by uncommenting
 		// one of the lines below.  This will work whether you are online or offline
 		//earthquakesURL = "test1.atom";
-		//earthquakesURL = "test2.atom";
+		earthquakesURL = "test2.atom";
 		
 		// WHEN TAKING THIS QUIZ: Uncomment the next line
 		//earthquakesURL = "quiz1.atom";
@@ -173,8 +174,11 @@ public class EarthquakeCityMap extends PApplet {
 		// and a Marker as input.  
 		// If isInCountry ever returns true, isLand should return true.
 		for (Marker m : countryMarkers) {
-			// TODO: Finish this method using the helper method isInCountry
-			
+			if (this.isInCountry(earthquake, m)) {
+				System.out.println(earthquake.getProperties());
+				return true;
+			}
+			return false;
 		}
 		
 		
@@ -256,7 +260,7 @@ public class EarthquakeCityMap extends PApplet {
 
 	public static void main(String[] args) {
 		//Add main method for running as application
-		PApplet.main(new String(module4.EarthquakeCityMap.class.getName()));
+        PApplet.main(new String(module4.EarthquakeCityMap.class.getName()));
 	}
 
 }
