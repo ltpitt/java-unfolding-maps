@@ -81,8 +81,8 @@ public class EarthquakeCityMap extends PApplet {
 		
 		// FOR TESTING: Set earthquakesURL to be one of the testing files by uncommenting
 		// one of the lines below.  This will work whether you are online or offline
-		earthquakesURL = "test1.atom";
-		//earthquakesURL = "test2.atom";
+		//earthquakesURL = "test1.atom";
+		earthquakesURL = "test2.atom";
 		
 		// WHEN TAKING THIS QUIZ: Uncomment the next line
 		//earthquakesURL = "quiz1.atom";
@@ -134,10 +134,8 @@ public class EarthquakeCityMap extends PApplet {
 		
 	}
 	
-	// helper method to draw key in GUI
-	// TODO: Update this method as appropriate
+
 	private void addKey() {	
-		// Remember you can use Processing's graphics methods here
 		fill(255, 250, 240);
 		rect(25, 50, 150, 250);
 		
@@ -173,13 +171,13 @@ public class EarthquakeCityMap extends PApplet {
 		// country in m.  Notice that isInCountry takes a PointFeature
 		// and a Marker as input.  
 		// If isInCountry ever returns true, isLand should return true.
+
 		for (Marker m : countryMarkers) {
 			if (this.isInCountry(earthquake, m)) {
 				//System.out.println(earthquake.getProperties());
 				return true;
 			}
 		}
-
 		// not inside any country
 		return false;
 	}
