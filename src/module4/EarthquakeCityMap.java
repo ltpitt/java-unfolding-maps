@@ -27,22 +27,14 @@ import processing.core.PApplet;
  * */
 public class EarthquakeCityMap extends PApplet {
 	
-	// We will use member variables, instead of local variables, to store the data
-	// that the setUp and draw methods will need to access (as well as other methods)
-	// You will use many of these variables, but the only one you should need to add
-	// code to modify is countryQuakes, where you will store the number of earthquakes
-	// per country.
-	
-	// You can ignore this.  It's to get rid of eclipse warnings
+	// It's to get rid of Eclipse warnings
 	private static final long serialVersionUID = 1L;
 
-	// IF YOU ARE WORKING OFFILINE, change the value of this variable to true
+	// IF WORKING OFFLINE, change the value of this variable to true
 	private static final boolean offline = false;
 	
 	/** This is where to find the local tiles, for working without an Internet connection */
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
-	
-	
 
 	//feed with magnitude 2.5+ Earthquakes
 	private String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
@@ -250,7 +242,6 @@ public class EarthquakeCityMap extends PApplet {
 		}
 		System.out.println("OCEAN QUAKES: " + totalWaterQuakes);
 
-		// TODO: Implement this method
 		// One (inefficient but correct) approach is to:
 		//   Loop over all of the countries, e.g. using 
 		//        for (Marker cm : countryMarkers) { ... }
