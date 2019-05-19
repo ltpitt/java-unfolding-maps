@@ -410,4 +410,9 @@ public class EarthquakeCityMap extends PApplet {
 		return false;
 	}
 
+	public static void main(String[] args) {
+		//Add main method for running as application
+		PApplet.main(new String(module6.EarthquakeCityMap.class.getName()));
+	}
+
 }
